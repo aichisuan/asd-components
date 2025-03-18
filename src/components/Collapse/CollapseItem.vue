@@ -19,7 +19,9 @@
     >
       <slot name="title">{{ title }}</slot>
       <!-- Icon -->
-      <Icon icon="angle-right" class="header-angle" />
+      <div class="as-collapse-item__icon">
+        <Icon icon="angle-right" class="header-angle" />
+      </div>
     </div>
     <!-- content -->
     <Transition name="slide" v-on="transitionListeners">

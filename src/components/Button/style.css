@@ -21,6 +21,7 @@
   align-items: center;
   line-height: 1;
   height: 32px;
+  min-width: 32px;
   white-space: nowrap;
   cursor: pointer;
   color: var(--as-button-text-color);
@@ -111,6 +112,7 @@
 .as-button--large {
   --as-button-size: 40px;
   height: var(--as-button-size);
+  min-width: var(--as-button-size);
   padding: 12px 19px;
   font-size: var(--as-font-size-base);
   border-radius: var(--as-border-radius-base);
@@ -118,6 +120,7 @@
 .as-button--small {
   --as-button-size: 24px;
   height: var(--as-button-size);
+  min-width: var(--as-button-size);
   padding: 5px 11px;
   font-size: 12px;
   border-radius: calc(var(--as-border-radius-base) - 1px);

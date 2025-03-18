@@ -9,10 +9,11 @@ export type SwitchProps = {
   activeValue?: SwitchValue;
   // 未激活的值
   inactiveValue?: SwitchValue;
+  activeColor?: string;
+  inactiveColor?: string;
   name?: string;
   id?: string;
   size?: 'small' | 'medium' | 'large';
-  // activeColor?: string;
 }
 
 

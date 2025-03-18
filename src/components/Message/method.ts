@@ -5,10 +5,11 @@ import MessageConstructor from './Message.vue';
 
 const instances: MessageContext[] = shallowReactive([]);
 
+const formatProps = (props: CreateMessageProps | string): CreateMessageProps => typeof props === 'string' ? { message: props } : props;
+
 let uniqId = 1;
 
-export const createMessage = (props: CreateMessageProps) => {
-  console.log('createMessage', props);
+const createMessageIns = (props: CreateMessageProps) => {
   const { nextZIndex } = useZIndex();
   const id = `msg_${uniqId++}`;
   const container = document.createElement('div');
@@ -19,6 +20,7 @@ export const createMessage = (props: CreateMessageProps) => {
     render(null, container);
     // 清除container
     document.body.removeChild(container);
+    props.onClose?.();
   }; 
 
   const handleDestory = () => {
@@ -36,7 +38,8 @@ export const createMessage = (props: CreateMessageProps) => {
   }
 
   const vnode = h(MessageConstructor, newProps);
-  // 渲染到页面
+  // 渲染到页面 @Todo  
+  // Invalid prop: type check failed for prop "message". Expected String with value "[object Object]", got Object  h 函数 警告未解决 
   render(vnode, container);
   // 插入页面
   document.body.appendChild(container);
@@ -50,13 +53,42 @@ export const createMessage = (props: CreateMessageProps) => {
     props: newProps,
     destroy: handleDestory
   }
-  console.log('这里是2')
   instances.push(instance)
-  console.log('当前示例列表', instances)
 
 
   return instance;
 };
+
+createMessageIns.success = (props: CreateMessageProps) => {
+  return createMessageIns({
+    ...formatProps(props),
+    type: 'success',
+  });
+};
+
+createMessageIns.danger = (props: CreateMessageProps) => {
+  return createMessageIns({
+    ...formatProps(props),
+    type: 'danger',
+  });
+};
+
+createMessageIns.warning = (props: CreateMessageProps) => {
+  return createMessageIns({
+    ...formatProps(props),
+    type: 'warning',
+  });
+};
+
+createMessageIns.info = (props: CreateMessageProps) => {
+  return createMessageIns({
+    ...formatProps(props),
+    type: 'info',
+  });
+};
+
+export const createMessage = createMessageIns;
+
 
 export const getLastInstance = () => {
   return instances[instances.length - 1];
@@ -65,7 +97,6 @@ export const getLastInstance = () => {
 
 export const getLastBottomOffset = (id: string) => {
   const idx = instances.findIndex((instance) => instance.id === id);
-  console.log({idx,id, instances});
   // 第一个或者没找到
   if (idx <= 0) return 0; 
   const prev = instances[idx - 1];

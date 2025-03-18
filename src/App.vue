@@ -74,6 +74,7 @@ const testInputVal = ref<string>('');
     <Select v-model="testSelectVal" placeholder="基础选择器，请选择" :options="selectOptions" />
     <Button round>Round Button</Button>
     <Button @click="open" @mouseenter="mouseenterFn" circle>AS</Button>
+    <Button @click="open" @mouseenter="mouseenterFn" circle icon="arrow-up"></Button>
     <Button disabled>Disabled Button</Button><br /><br />
     <Button type="primary" @click.native="open">Primary</Button>
     <Button type="success" @click.native="close">Success</Button>
@@ -104,7 +105,7 @@ const testInputVal = ref<string>('');
     <Button size="large">Large</Button>
     <Button size="small">Small</Button><br /><br />
     <Button size="large" loading>Loading</Button>
-    <Button size="large" icon="arrow-up">Icon33333</Button><br /><br />
+    <Button size="large" icon="arrow-up"></Button><br /><br />
     icon图标
     <Icon icon="arrow-up" size="2xl" type="danger" color="#0e7a0d" />
 

@@ -11,6 +11,8 @@ export interface MenuOptionItem {
 }
 
 export interface DropdownProps  extends TooltipProps {
+  trigger?: 'click' | 'hover';
+  placement?: 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
   menuOptions: MenuOptionItem[];
   // 点击之后关闭 下拉框
   hideAfterClick?: boolean;

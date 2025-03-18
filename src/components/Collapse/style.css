@@ -10,7 +10,6 @@
   --as-collapse-disabled-text-color: var(--as-disabled-text-color);
   --as-collapse-disabled-border-color: var(--as-border-color-lighter);
   border-top: 1px solid var(--as-collapse-border-color);
-  border-bottom: 1px solid var(--as-collapse-border-color);
 }
 .as-collapse-item__header {
   display: flex;
@@ -26,6 +25,12 @@
   transition: border-bottom-color var(--as-transition-duration);
   outline: none;
   border-bottom: 1px solid var(--as-collapse-border-color);
+  .as-collapse-item__icon {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
   &.is-disabled {
     color: var(--as-collapse-disabled-text-color);
     cursor: not-allowed;

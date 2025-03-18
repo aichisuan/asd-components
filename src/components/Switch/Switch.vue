@@ -11,14 +11,17 @@
     @click="handleSwitchValue"
   >
     <input type="checkbox" class="as-switch__input" role="switch" ref="checkInput" :name="name" :disabled="disabled" @keydown.enter="handleSwitchValue" /> 
-    <div class="as-switch__core">
+    <div class="as-switch__core" :style="{ 
+      backgroundColor: isChecked ? props.activeColor : props.inactiveColor,
+      borderColor: isChecked ? props.activeColor : props.inactiveColor,  
+    }">
+
       <div class="as-switch__core-inner">
         <span v-if="activeText || inactiveText" class="as-switch__core-inner-text">
           {{ isChecked ? activeText : inactiveText }}
         </span>
       </div>
       <div class="as-switch__core-action">
-
       </div>
     </div>
   </div>
@@ -31,7 +34,6 @@ import type { SwitchProps, SwitchEmits } from './types';
 
 defineOptions({
   name: 'asSwitch',
-  inheritAttrs: false,
 });
 
 const emits = defineEmits<SwitchEmits>();

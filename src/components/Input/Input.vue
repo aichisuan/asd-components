@@ -1,6 +1,7 @@
 <template>
   <div
     class="as-input"
+    :style="containerStyle"
     :class="{
       [`as-input--${props.size}`]: props.size,
       [`as-input--${props.type}`]: props.type,
@@ -14,6 +15,7 @@
       // 后置 suffix
       'as-input--suffix': !!$slots.suffix,
       'as-input--focus': isFocus,
+      [`${attrs.class}`]: !!attrs.class,
     }"
   >
     <!-- textarea -->
@@ -21,7 +23,7 @@
     <textarea
       v-if="type === 'textarea'"
       class="as-textarea__wrapper"
-      v-bind="attrs"
+      v-bind="attrsWithoutStyleAndClass"
       ref="inputRef"
       :disabled="disabled"
       :readonly="readonly"
@@ -50,7 +52,7 @@
           class="as-input__inner"
           :type="showPassword ? (isPasswordVisible ? 'text' : 'password') : type"
           ref="inputRef"
-          v-bind="attrs"
+          v-bind="attrsWithoutStyleAndClass"
           :disabled="disabled"
           :readonly="readonly"
           :autocomplete="autocomplete"
@@ -80,7 +82,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, watch, defineProps, defineEmits, withDefaults, useAttrs, nextTick } from 'vue';
+import { ref, computed, watch, defineProps, defineEmits, withDefaults, useAttrs, nextTick, type StyleValue } from 'vue';
 import type { InputProps, InputEmits } from './types';
 import Icon from '../Icon/Icon.vue';
 
@@ -99,6 +101,17 @@ const props = withDefaults(defineProps<InputProps>(), {
 
 //
 const attrs = useAttrs();
+
+// 外部传入样式
+const containerStyle = computed<StyleValue>(() => [
+  attrs.style as StyleValue,
+])
+
+// 剔除 attrs 中的 style 和 class
+const attrsWithoutStyleAndClass = computed(() => {
+  const { style, class: className, ...rest } = attrs;
+  return rest;
+});
 
 const innerCmValue = ref(props.modelValue);
 const inputRef = ref<HTMLInputElement | null>(null);

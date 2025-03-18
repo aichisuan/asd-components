@@ -1,7 +1,7 @@
 <template>
   <div class="as-tooltip" ref="tooltipContainerNode" v-on="outerEvents">
     <div class="as-tooltip__trigger" ref="tooltipTriggerNode" v-on="events">
-      <slot/>
+      <slot />
     </div>
     <Transition :name="transitionName">
       <!-- 这里也要加上一个events函数，为了滑入的时候不会立马消失 -->
@@ -12,12 +12,11 @@
         <div id="arrow" data-popper-arrow></div>
       </div>
     </Transition>
-    
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, watch, computed, onUnmounted, onMounted } from 'vue';
+import { reactive, ref, watch, computed, onUnmounted, onMounted, useSlots } from 'vue';
 import type { TooltipProps, TooltipEmits, TooltipInstance } from './types.ts';
 import { createPopper } from '@popperjs/core';
 import type { Instance as PopperInstance } from '@popperjs/core';
@@ -26,9 +25,7 @@ import userClickOutside from '../../hooks/useClickOutside';
 
 defineOptions({
   name: 'AsTooltip',
-})
-
-
+});
 
 const isOpen = ref(false);
 
@@ -39,7 +36,9 @@ const props = withDefaults(defineProps<TooltipProps>(), {
   transitionName: 'fade',
   delayOpen: 0,
   delayClose: 100,
-})
+});
+
+const defaultSlot = useSlots().default;
 
 const popperOptions = computed(() => {
   return {
@@ -50,12 +49,12 @@ const popperOptions = computed(() => {
         options: {
           // 偏移量
           offset: [0, 8],
-        }
-      }
+        },
+      },
     ],
     ...props.popperOptions,
-  }
-})
+  };
+});
 
 const emits = defineEmits<TooltipEmits>();
 
@@ -70,44 +69,56 @@ const tooltipPopperNode = ref<HTMLElement | null>(null);
 
 const popperInstance = ref<PopperInstance | null>(null);
 
-
 let outerEvents: Record<string, Function> = reactive({});
 let events: Record<string, Function> = reactive({});
 
+onMounted(() => {
+  if (defaultSlot?.()[0]?.el && props.trigger === 'focus') {
+    // 监听 slot 上的 focus 和 blur 事件
+    defaultSlot?.()[0].el?.addEventListener('focus', () => {console.log('???????????')}, true);
+    defaultSlot?.()[0].el?.addEventListener('blur', closeFinal, true);
+  }
+});
+
+onUnmounted(() => {
+  if (defaultSlot?.()[0]?.el) {
+    // 监听 slot 上的 focus 和 blur 事件
+    defaultSlot?.()[0].el?.removeEventListener('focus', openFinal, true);
+    defaultSlot?.()[0].el?.removeEventListener('blur', closeFinal, true);
+  }
+});
 
 const open = () => {
   isOpen.value = true;
   emits('visible-change', true);
-}
+};
 
 const close = () => {
   isOpen.value = false;
   emits('visible-change', false);
-}
+};
 
 const openDebounce = debounce(open, props.delayOpen);
 const closeDebounce = debounce(close, props.delayClose);
 
 const openFinal = () => {
-  console.log('openFinal')
+  console.log(111111, 'openFinal');
   closeDebounce.cancel();
   openDebounce();
-}
+};
 
 const closeFinal = () => {
-  console.log('closeFinal', '-----------')
   openDebounce.cancel();
   closeDebounce();
-}
+};
 
 const togglePopper = () => {
-  console.log('togglePopper', isOpen.value)
   if (isOpen.value) {
     closeFinal();
   } else {
     openFinal();
   }
-}
+};
 
 // 点击外部关闭 以及触发事件
 userClickOutside(tooltipContainerNode, () => {
@@ -116,20 +127,25 @@ userClickOutside(tooltipContainerNode, () => {
     closeFinal();
   }
 
-  if (isOpen.value ) {
+  if (isOpen.value) {
     emits('click-outside', true);
   }
-})
+});
 
 const attachEvents = () => {
   if (props.trigger === 'hover') {
     events.mouseenter = openFinal;
     outerEvents.mouseleave = closeFinal;
   } else if (props.trigger === 'click') {
-    
     events.click = togglePopper;
+  } else if (props.trigger === 'focus') {
+    // 如果是 focus 触发，确保 slotRef 上绑定了事件
+    if (defaultSlot?.()[0]?.el) {
+      defaultSlot?.()[0].el?.addEventListener('focus', openFinal, true);
+      defaultSlot?.()[0].el?.addEventListener('blur', closeFinal, true);
+    }
   }
-}
+};
 
 // 不是自定义事件绑定事件
 if (!props.isManual) {
@@ -137,48 +153,53 @@ if (!props.isManual) {
 }
 
 // 监听手动触发 isManual 的变化 重置事件
-watch(() => props.isManual, (newManual) => {
-  if (newManual) {
-    outerEvents = {};
-    events = {};
-  } else {
-    console.log('触发了 吗')
-    attachEvents();
+watch(
+  () => props.isManual,
+  (newManual) => {
+    if (newManual) {
+      outerEvents = {};
+      events = {};
+    } else {
+      attachEvents();
+    }
   }
-})
-
+);
 
 // 监听 trigger 的变化 重置事件
-watch(() => props.trigger, (newTrigger, oldTrigger) => {
-  console.log(newTrigger, oldTrigger)
-  if (newTrigger !== oldTrigger) {
-    events = {};
-    outerEvents = {};
-    attachEvents();
+watch(
+  () => props.trigger,
+  (newTrigger, oldTrigger) => {
+    if (newTrigger !== oldTrigger) {
+      events = {};
+      outerEvents = {};
+      attachEvents();
+    }
   }
-})
-
+);
 
 // 监听 isOpen 的变化 创建 popper 实例 或者销毁 在nodeReady 之后
-watch(isOpen, (newIsOpen) => {
-  if (!newIsOpen) return;
+watch(
+  isOpen,
+  (newIsOpen) => {
+    if (!newIsOpen) return;
 
-  if (tooltipTriggerNode.value && tooltipPopperNode.value) {
-    popperInstance.value = createPopper(tooltipTriggerNode.value, tooltipPopperNode.value, popperOptions.value);
-  } else {
-    popperInstance.value?.destroy();
-  }
-
-}, { flush: 'post' })
+    if (tooltipTriggerNode.value && tooltipPopperNode.value) {
+      popperInstance.value = createPopper(tooltipTriggerNode.value, tooltipPopperNode.value, popperOptions.value);
+    } else {
+      popperInstance.value?.destroy();
+    }
+  },
+  { flush: 'post' }
+);
 
 onUnmounted(() => {
   popperInstance.value?.destroy();
-})
+});
 
 defineExpose<TooltipInstance>({
-  'show': openFinal,
-  'hide': closeFinal,
-})
+  show: openFinal,
+  hide: closeFinal,
+});
 </script>
 
 <style scoped>

@@ -6,6 +6,7 @@ import type { VNode, ComponentInternalInstance } from 'vue';
   showClose?: boolean;
   duration?: number;
   onDestory?: () => void;
+  onClose?: () => void;
   id: string;
   zIndex: number;
   offset?: number;

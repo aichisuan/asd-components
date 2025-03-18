@@ -22,7 +22,6 @@ const height = ref(0);
 
 // 上一个实例的最上面的坐标偏移量
 const lastOffset = computed(() => {
-  console.log('这里是1')
   return getLastBottomOffset(props.id)
 });
 
@@ -61,7 +60,6 @@ const clearTimer = () => {
 };
 
 onMounted(() => {
-  console.log(props.duration, 'props.duration');
   visible.value = true;
   startTimer();
 });

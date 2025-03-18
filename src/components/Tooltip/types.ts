@@ -3,7 +3,7 @@
 
 export interface TooltipProps {
   content?: string;
-  trigger?: "hover" | "click";
+  trigger?: "hover" | "click" | "focus";
   placement?: Placement;
   options?: Options;
   // 是否是手动触发

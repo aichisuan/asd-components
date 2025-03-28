@@ -17,6 +17,12 @@ dependencies:
   '@popperjs/core':
     specifier: ^2.11.8
     version: 2.11.8
+  '@vueuse/core':
+    specifier: ^13.0.0
+    version: 13.0.0(vue@3.5.13)
+  decimal.js:
+    specifier: ^10.5.0
+    version: 10.5.0
   lodash-es:
     specifier: ^4.17.21
     version: 4.17.21
@@ -99,7 +105,7 @@ devDependencies:
     version: 5.6.3
   unplugin-vue-macros:
     specifier: ^2.14.5
-    version: 2.14.5(typescript@5.6.3)(vite@6.0.5)(vue-tsc@2.2.0)(vue@3.5.13)
+    version: 2.14.5(@vueuse/core@13.0.0)(typescript@5.6.3)(vite@6.0.5)(vue-tsc@2.2.0)(vue@3.5.13)
   vite:
     specifier: ^6.0.1
     version: 6.0.5(@types/node@22.10.2)
@@ -1806,7 +1812,6 @@ packages:
 
   /@types/web-bluetooth@0.0.21:
     resolution: {integrity: sha512-oIQLCGWtcFZy2JW77j9k8nHzAOpqMHLQejDA48XXMWH6tjCQHz5RCFz1bzsmROyL6PUm+LLnUiI4BCn221inxA==}
-    dev: true
 
   /@typescript-eslint/eslint-plugin@8.18.2(@typescript-eslint/parser@8.18.2)(eslint@9.17.0)(typescript@5.6.3):
     resolution: {integrity: sha512-adig4SzPLjeQ0Tm+jvsozSGiCliI2ajeURDGHjZ2llnA+A67HihCQ+a3amtPhUakd1GlwHxSRvzOZktbEvhPPg==}
@@ -2150,7 +2155,7 @@ packages:
       vue: 3.5.13(typescript@5.6.3)
     dev: true
 
-  /@vue-macros/define-models@1.3.5(vue@3.5.13):
+  /@vue-macros/define-models@1.3.5(@vueuse/core@13.0.0)(vue@3.5.13):
     resolution: {integrity: sha512-XFUG498vLmzavLHYmZdiFKT+cN5bYDuVEOfG4hsVAdOoflGqBcRhZmnr9b2M/Y90olULq8AZY7xSnWx9Vqyerw==}
     engines: {node: '>=16.14.0'}
     peerDependencies:
@@ -2160,6 +2165,7 @@ packages:
         optional: true
     dependencies:
       '@vue-macros/common': 1.16.1(vue@3.5.13)
+      '@vueuse/core': 13.0.0(vue@3.5.13)
       ast-walker-scope: 0.6.2
       unplugin: 1.16.1
     transitivePeerDependencies:
@@ -2713,6 +2719,16 @@ packages:
       - typescript
     dev: true
 
+  /@vueuse/core@13.0.0(vue@3.5.13):
+    resolution: {integrity: sha512-rkgb4a8/0b234lMGCT29WkCjPfsX0oxrIRR7FDndRoW3FsaC9NBzefXg/9TLhAgwM11f49XnutshM4LzJBrQ5g==}
+    peerDependencies:
+      vue: ^3.5.0
+    dependencies:
+      '@types/web-bluetooth': 0.0.21
+      '@vueuse/metadata': 13.0.0
+      '@vueuse/shared': 13.0.0(vue@3.5.13)
+      vue: 3.5.13(typescript@5.6.3)
+
   /@vueuse/integrations@12.8.2(axios@1.7.9)(focus-trap@7.6.4)(typescript@5.6.3):
     resolution: {integrity: sha512-fbGYivgK5uBTRt7p5F3zy6VrETlV9RtZjBqd1/HxGdjdckBgBM4ugP8LHpjolqTj14TXTxSK1ZfgPbHYyGuH7g==}
     peerDependencies:
@@ -2767,6 +2783,9 @@ packages:
     resolution: {integrity: sha512-rAyLGEuoBJ/Il5AmFHiziCPdQzRt88VxR+Y/A/QhJ1EWtWqPBBAxTAFaSkviwEuOEZNtW8pvkPgoCZQ+HxqW1A==}
     dev: true
 
+  /@vueuse/metadata@13.0.0:
+    resolution: {integrity: sha512-TRNksqmvtvqsuHf7bbgH9OSXEV2b6+M3BSN4LR5oxWKykOFT9gV78+C2/0++Pq9KCp9KQ1OQDPvGlWNQpOb2Mw==}
+
   /@vueuse/shared@12.8.2(typescript@5.6.3):
     resolution: {integrity: sha512-dznP38YzxZoNloI0qpEfpkms8knDtaoQ6Y/sfS0L7Yki4zh40LFHEhur0odJC6xTHG5dxWVPiUWBXn+wCG2s5w==}
     dependencies:
@@ -2774,6 +2793,13 @@ packages:
     transitivePeerDependencies:
       - typescript
     dev: true
+
+  /@vueuse/shared@13.0.0(vue@3.5.13):
+    resolution: {integrity: sha512-9MiHhAPw+sqCF/RLo8V6HsjRqEdNEWVpDLm2WBRW2G/kSQjb8X901sozXpSCaeLG0f7TEfMrT4XNaA5m1ez7Dg==}
+    peerDependencies:
+      vue: ^3.5.0
+    dependencies:
+      vue: 3.5.13(typescript@5.6.3)
 
   /abbrev@2.0.0:
     resolution: {integrity: sha512-6/mh1E2u2YgEsCHdY0Yx5oW+61gZU+1vXaoiHHrpKeuRNNgFvS+/jrwHiQhB5apAf5oB7UB7E19ol2R2LKH8hQ==}
@@ -3337,9 +3363,8 @@ packages:
       ms: 2.1.3
     dev: true
 
-  /decimal.js@10.4.3:
-    resolution: {integrity: sha512-VBBaLc1MgL5XpzgIP7ny5Z6Nx3UrRkIViUkPUdtl9aya5amy3De1gsUUSB1g3+3sExYNjCAsAznmukyxCb1GRA==}
-    dev: true
+  /decimal.js@10.5.0:
+    resolution: {integrity: sha512-8vDa8Qxvr/+d94hSh5P3IJwI5t8/c0KsMp+g8bNw9cY2icONa5aPfvKeieW1WlG0WQYwwhJ7mjui2xtiePQSXw==}
 
   /dedent@0.7.0:
     resolution: {integrity: sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==}
@@ -4349,7 +4374,7 @@ packages:
     dependencies:
       cssstyle: 4.1.0
       data-urls: 5.0.0
-      decimal.js: 10.4.3
+      decimal.js: 10.5.0
       form-data: 4.0.1
       html-encoding-sniffer: 4.0.0
       http-proxy-agent: 7.0.2
@@ -5767,7 +5792,7 @@ packages:
       - vue
     dev: true
 
-  /unplugin-vue-macros@2.14.5(typescript@5.6.3)(vite@6.0.5)(vue-tsc@2.2.0)(vue@3.5.13):
+  /unplugin-vue-macros@2.14.5(@vueuse/core@13.0.0)(typescript@5.6.3)(vite@6.0.5)(vue-tsc@2.2.0)(vue@3.5.13):
     resolution: {integrity: sha512-jlZhsr26/wreKBrkX6BM21Mpm9DbS6H2H0aMrd3gu/wabA3YWUj/t+zqZD5Y5yShaTKO/03yJjb5BfPck9mPtw==}
     engines: {node: '>=16.14.0'}
     peerDependencies:
@@ -5779,7 +5804,7 @@ packages:
       '@vue-macros/common': 1.16.1(vue@3.5.13)
       '@vue-macros/config': 0.6.1(vue@3.5.13)
       '@vue-macros/define-emit': 0.5.4(vue@3.5.13)
-      '@vue-macros/define-models': 1.3.5(vue@3.5.13)
+      '@vue-macros/define-models': 1.3.5(@vueuse/core@13.0.0)(vue@3.5.13)
       '@vue-macros/define-prop': 0.6.5(vue@3.5.13)
       '@vue-macros/define-props': 4.0.6(@vue-macros/reactivity-transform@1.1.6)(vue@3.5.13)
       '@vue-macros/define-props-refs': 1.3.5(vue@3.5.13)

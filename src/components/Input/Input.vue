@@ -82,7 +82,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, watch, defineProps, defineEmits, withDefaults, useAttrs, nextTick, type StyleValue } from 'vue';
+import { ref, computed, watch, defineProps, defineEmits, useAttrs, nextTick, type StyleValue } from 'vue';
 import type { InputProps, InputEmits } from './types';
 import Icon from '../Icon/Icon.vue';
 

@@ -10,7 +10,9 @@
       <input placeholder="Focus me" />
     </Tooltip>
     <Tooltip content="聚焦触发提示" trigger="focus">
-      <Button>Click</Button>
+      <div>
+        <Button id="test" type="primary">1231232</Button>
+      </div>
     </Tooltip>
   </div>
 </template>

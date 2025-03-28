@@ -30,15 +30,15 @@ defineOptions({
 const isOpen = ref(false);
 
 const props = withDefaults(defineProps<TooltipProps>(), {
+  offset: () => [0, 8],
   isManual: false,
   placement: 'top',
   trigger: 'hover',
   transitionName: 'fade',
   delayOpen: 0,
   delayClose: 100,
+  
 });
-
-const defaultSlot = useSlots().default;
 
 const popperOptions = computed(() => {
   return {
@@ -48,7 +48,7 @@ const popperOptions = computed(() => {
         name: 'offset',
         options: {
           // 偏移量
-          offset: [0, 8],
+          offset: props.offset,
         },
       },
     ],
@@ -73,18 +73,18 @@ let outerEvents: Record<string, Function> = reactive({});
 let events: Record<string, Function> = reactive({});
 
 onMounted(() => {
-  if (defaultSlot?.()[0]?.el && props.trigger === 'focus') {
+  if (tooltipTriggerNode.value && props.trigger === 'focus') {
     // 监听 slot 上的 focus 和 blur 事件
-    defaultSlot?.()[0].el?.addEventListener('focus', () => {console.log('???????????')}, true);
-    defaultSlot?.()[0].el?.addEventListener('blur', closeFinal, true);
+    tooltipTriggerNode.value.addEventListener('focusin', openFinal, true);
+    tooltipTriggerNode.value.addEventListener('focusout', closeFinal, true);
   }
 });
 
 onUnmounted(() => {
-  if (defaultSlot?.()[0]?.el) {
+  if (tooltipTriggerNode.value && props.trigger === 'focus') {
     // 监听 slot 上的 focus 和 blur 事件
-    defaultSlot?.()[0].el?.removeEventListener('focus', openFinal, true);
-    defaultSlot?.()[0].el?.removeEventListener('blur', closeFinal, true);
+    tooltipTriggerNode.value.removeEventListener('focusin', openFinal, true);
+    tooltipTriggerNode.value.removeEventListener('focusout', closeFinal, true);
   }
 });
 
@@ -102,7 +102,6 @@ const openDebounce = debounce(open, props.delayOpen);
 const closeDebounce = debounce(close, props.delayClose);
 
 const openFinal = () => {
-  console.log(111111, 'openFinal');
   closeDebounce.cancel();
   openDebounce();
 };
@@ -140,9 +139,9 @@ const attachEvents = () => {
     events.click = togglePopper;
   } else if (props.trigger === 'focus') {
     // 如果是 focus 触发，确保 slotRef 上绑定了事件
-    if (defaultSlot?.()[0]?.el) {
-      defaultSlot?.()[0].el?.addEventListener('focus', openFinal, true);
-      defaultSlot?.()[0].el?.addEventListener('blur', closeFinal, true);
+    if (tooltipTriggerNode.value) {
+      tooltipTriggerNode.value.removeEventListener('focusin', openFinal, true);
+      tooltipTriggerNode.value.removeEventListener('focusout', closeFinal, true);
     }
   }
 };
@@ -197,6 +196,7 @@ onUnmounted(() => {
 });
 
 defineExpose<TooltipInstance>({
+  TooltipRef: tooltipContainerNode,
   show: openFinal,
   hide: closeFinal,
 });

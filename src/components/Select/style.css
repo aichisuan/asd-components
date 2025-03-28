@@ -38,7 +38,7 @@
   .as-select__menu-item { 
     margin: 0;
     font-size: var(--as-select-item-font-size);
-    padding: 0 32px 0 20px;
+    padding: 0 32px 0 10px;
     position: relative;
     white-space: nowrap;
     overflow: hidden;

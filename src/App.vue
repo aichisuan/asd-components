@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { createMessage } from './components/Message/method'
+import { createMessage } from './components/Message/method';
 import { ref, h, onMounted } from 'vue';
 import Button from './components/Button/Button.vue';
 import Collapse from './components/Collapse/Collapse.vue';
@@ -9,7 +9,17 @@ import Dropdown from './components/Dropdown/Dropdown.vue';
 import Switch from './components/Switch/Switch.vue';
 import Input from './components/Input/Input.vue';
 import Select from './components/Select/Select.vue';
+import ImgPreview from './components/ImgPreview/ImgPreview.vue';
 const openedValue = ref<string[]>(['a']);
+
+const imgDatas = [
+  'https://img2.baidu.com/it/u=1565288163,4104186569&fm=253&app=138&f=JPEG?w=675&h=949',
+  'https://pic.rmb.bdstatic.com/bjh/240625/fe48c9d6737e8830397fdcfad14c88711180.jpeg',
+  'https://q3.itc.cn/images01/20240330/c2c562ebbbb246ffb9a6a8f5ec124e58.jpeg',
+  'https://img2.baidu.com/it/u=3514207101,3530803158&fm=253&fmt=auto&app=138&f=JPEG?w=665&h=665'
+];
+
+const showImgPreview = ref(false);
 
 import type { TooltipInstance } from './components/Tooltip/types.ts';
 import Tooltip from './components/Tooltip/Tooltip.vue';
@@ -23,22 +33,21 @@ const selectOptions = [
   { label: ' 周杰伦', value: '1' },
   { label: '刘亦菲', value: '2' },
   { label: '林俊杰', value: '3' },
-  { label: '王力宏', value: '4', disabled: true }
-]
+  { label: '王力宏', value: '4', disabled: true },
+];
 
 const open = () => {
   console.log('open');
-  createMessage({ message: 'hello world', showClose: true, })
+  createMessage({ message: 'hello world', showClose: true });
   toolTipRef.value && toolTipRef.value.show();
   dropDownRef.value && dropDownRef.value.show();
 };
 
-
 onMounted(() => {
-  console.log('onMounted');
-  createMessage({ message: 'hello world', duration: 0, showClose: true })
-  createMessage({ message: 'hello world again', duration: 0, type: 'success', showClose: true, offset: 100 })
-  createMessage({ message: 'hello world three', duration: 0, type: 'danger', showClose: true })
+  // console.log('onMounted');
+  // createMessage({ message: 'hello world', duration: 0, showClose: true });
+  // createMessage({ message: 'hello world again', duration: 0, type: 'success', showClose: true, offset: 100 });
+  // createMessage({ message: 'hello world three', duration: 0, type: 'danger', showClose: true });
 });
 
 const close = () => {
@@ -55,10 +64,10 @@ const menuOptions: MenuOptionItem[] = [
 ];
 
 const handleSelect = (item: any) => {
-  console.log('handleSelect event',item);
+  console.log('handleSelect event', item);
 };
 const visibleChange = (visible: boolean) => {
-  console.log('visibleChange event',visible);
+  console.log('visibleChange event', visible);
 };
 const mouseenterFn = () => {
   console.log('mouseenterFn');
@@ -67,12 +76,19 @@ const mouseenterFn = () => {
 const testSelect = ref<string>('');
 
 const testInputVal = ref<string>('');
+
+const hanldeShowImgPreview = () => {
+  showImgPreview.value = true;
+};
 </script>
 
 <template>
   <main>
+    <ImgPreview :imgsData="imgDatas" :showIndex="0" :options="{ clickMaskClose: true, closeIcon: true }" v-model:visible="showImgPreview"></ImgPreview>
+    <Button round @click="hanldeShowImgPreview">Round Button</Button>
+    <!-- 
     <Select v-model="testSelectVal" placeholder="基础选择器，请选择" :options="selectOptions" />
-    <Button round>Round Button</Button>
+    <Button round @click="hanldeShowImgPreview">Round Button</Button>
     <Button @click="open" @mouseenter="mouseenterFn" circle>AS</Button>
     <Button @click="open" @mouseenter="mouseenterFn" circle icon="arrow-up"></Button>
     <Button disabled>Disabled Button</Button><br /><br />
@@ -85,7 +101,7 @@ const testInputVal = ref<string>('');
     <Button type="success" plain>Success</Button>
     <Button type="info" plain>Info</Button>
     <Button type="warning" plain>Warning</Button>
-    <Switch v-model="testSelect" activeText="是"  inactiveText="" />
+    <Switch v-model="testSelect" activeText="是" inactiveText="" />
     <Tooltip ref="toolTipRef" content="this is tooltip content" trigger="click" placement="top">
       <Button>Tooltip</Button>
     </Tooltip>
@@ -122,51 +138,42 @@ const testInputVal = ref<string>('');
       </CollapseItem>
     </Collapse>
 
-    <Dropdown placement="bottom" trigger="hover" hideAfterClick :menu-options="menuOptions" @select="handleSelect" @visible-change="visibleChange" >
+    <Dropdown placement="bottom" trigger="hover" hideAfterClick :menu-options="menuOptions" @select="handleSelect" @visible-change="visibleChange">
       <Button type="info">下拉菜单</Button>
     </Dropdown>
     <Dropdown placement="bottom" divided hideAfterClick :menu-options="menuOptions" @select="handleSelect" @visible-change="visibleChange" ref="dropDownRef">
       <Button type="info">下拉菜单2</Button>
     </Dropdown>
-    <br>
-    <Switch v-model="testSelect" activeText="是"  inactiveText="否" />
-    <Switch v-model="testSelect" activeText="是"  inactiveText="否" size="large"/>
-    <Switch v-model="testSelect" activeText="是"  inactiveText="否" size="small"/>
-    <Switch v-model="testSelect" activeText="是"  inactiveText="否" disabled/>
-    <br>
+    <br />
+    <Switch v-model="testSelect" activeText="是" inactiveText="否" />
+    <Switch v-model="testSelect" activeText="是" inactiveText="否" size="large" />
+    <Switch v-model="testSelect" activeText="是" inactiveText="否" size="small" />
+    <Switch v-model="testSelect" activeText="是" inactiveText="否" disabled />
+    <br />
     <Input v-model="testInputVal" placeholder="基础文本框，请输入" />
-    <Input v-model="testInputVal" clearable placeholder="输入字符以后可以点击清空"/>
-
+    <Input v-model="testInputVal" clearable placeholder="输入字符以后可以点击清空" />
 
     <Input v-model="testInputVal" placeholder="prepend append">
-    <template #prepend>Https://</template>
-    <template #append>.com</template>
-  </Input>
-
-  <Input v-model="testInputVal" placeholder="密码文本框，可以切换" showPassword/>
-
-  <Input v-model="testInputVal" placeholder="prefix suffix">
-    <template #prefix>
-      <Icon icon="fa-user" />
-    </template>
-    <template #suffix>
-      <Icon icon="fa-user" />
-    </template>
-  </Input>
-
-  <Input v-model="testInputVal" placeholder="大的 Input" size="large">
-    </Input>
-    <Input v-model="testInputVal" placeholder="普通的 Input">
-    </Input>
-    <Input v-model="testInputVal" placeholder="小的 Input" size="small">
-    </Input>
-    <Input v-model="testInputVal" placeholder="可以是一个 Textarea" type="textarea">
+      <template #prepend>Https://</template>
+      <template #append>.com</template>
     </Input>
 
-    <br>
-    
+    <Input v-model="testInputVal" placeholder="密码文本框，可以切换" showPassword />
 
+    <Input v-model="testInputVal" placeholder="prefix suffix">
+      <template #prefix>
+        <Icon icon="fa-user" />
+      </template>
+      <template #suffix>
+        <Icon icon="fa-user" />
+      </template>
+    </Input>
 
+    <Input v-model="testInputVal" placeholder="大的 Input" size="large"> </Input>
+    <Input v-model="testInputVal" placeholder="普通的 Input"> </Input>
+    <Input v-model="testInputVal" placeholder="小的 Input" size="small"> </Input>
+    <Input v-model="testInputVal" placeholder="可以是一个 Textarea" type="textarea"> </Input>
 
+    <br /> -->
   </main>
 </template>

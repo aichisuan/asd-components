@@ -41,13 +41,25 @@ description: Tooltip 组件的文档
 | placement      | 提示框的显示位置           | `'top' \| 'top-start' \| 'top-end' \| 'bottom' \| 'bottom-start' \| 'bottom-end' \| 'left' \| 'left-start' \| 'left-end' \| 'right' \| 'right-start' \| 'right-end'` | `'top'`   |
 | trigger        | 触发方式                   | `'hover' \| 'click' \| 'focus'` | `'hover'` |
 | disabled       | 是否禁用提示框             | `boolean`                  | `false`   |
-| offset         | 提示框与触发元素的偏移量   | `number`                   | `10`      |
-| showArrow      | 是否显示箭头               | `boolean`                  | `true`    |
-| delay          | 提示框显示/隐藏的延迟时间  | `number`                   | `0`       |
+| offset         | 提示框与触发元素的偏移量,[水平偏移值向右为正数，垂直偏移值向下为正数]，   | `[number, number]`                   | `[0, 8]`      |
+| isManual         | 是否手动触发   | `boolean`                   | false      |
+| popperOptions         | Popper 参数，详细可以产看，[Popper.js Options 文档](https://popper.js.org/docs/v2/constructors/#options)   | `Object`        | -     |
+| transitionName         | Tooltip 显示动画，暂时只支持fade,后期会增加支持   | `string`        | `fade`     |
+| delayOpen         | 延迟打开时间   | `number`        | `-`     |
+| delayClose         | 延迟关闭时间   | `number`        | `-`     |
 
-### Tooltip Events
 
+
+### Tooltip Exposes
+
+| 属性名         | 描述                       | 类型                       |
+| -------------- | -------------------------- | -------------------------- |
+| TooltipRef           | Tooltip组件Ref           |     Ref<HTMLElement | null>      |
+| show           | 提示框显示主动操作           | Function                         |
+| hide           | 提示框隐藏主动操作         | Function                         |
+
+### Tooltip Events 
 | 事件名         | 描述                       | 参数                       |
 | -------------- | -------------------------- | -------------------------- |
-| show           | 提示框显示时触发           | —                         |
-| hide           | 提示框隐藏时触发           | —                         |
+| visible-change           | 显示状态发生改变,true 打开，false隐藏           |     boolean                    |
+| click-outside          | 点击外部，true打开，flase隐藏           | boolean                         |

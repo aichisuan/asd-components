@@ -1,4 +1,5 @@
  import type { Placement, Options } from "@popperjs/core";
+import type { Ref } from "vue";
 
 
 export interface TooltipProps {
@@ -6,6 +7,7 @@ export interface TooltipProps {
   trigger?: "hover" | "click" | "focus";
   placement?: Placement;
   options?: Options;
+  offset?: [number, number];
   // 是否是手动触发
   isManual?: boolean;
   popperOptions?: Partial<Options>;
@@ -19,6 +21,7 @@ export interface TooltipProps {
 
 
 export interface TooltipInstance {
+  TooltipRef: Ref<HTMLElement | null>;
   show: () => void;
   hide: () => void;
 }

@@ -51,11 +51,15 @@ export default defineConfig({
           {
             text: '',
             items: [
+              { text: 'Avatar 头像', link: '/components/Avatar' },
+              { text: 'BackTop 回到顶部', link: '/components/BackTop' },
               { text: 'Button 按钮', link: '/components/Button' },
               { text: 'Collapse 折叠面板', link: '/components/Collapse' },
               { text: 'Dropdown 下拉菜单', link: '/components/Dropdown' },
               { text: 'Icon 图标', link: '/components/Icon' },
               { text: 'Input 输入框', link: '/components/Input' },
+              { text: 'ImgPreview 图片预览', link: '/components/ImgPreview' },
+              { text: 'NumberAnimation 数字动画', link: '/components/NumberAnimation' },
               { text: 'Message 消息弹窗', link: '/components/Message' },
               { text: 'Switch 开关', link: '/components/Switch' },
               { text: 'Select', link: '/components/Select' },

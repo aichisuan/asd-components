@@ -23,6 +23,10 @@
 
 ## 每个组件的分析
 
+### Avatar
+
+### BackTop
+
 ### button 按钮
 
 * type  default primary Danger
@@ -36,7 +40,29 @@
 
 button 组件本质其实就是添加class
 
+### Countdown
+
 ### Collapse
+
+### Dialog
+
+### NumberAnimation 数值动画
+
+### Star 评分
+
+### 统计数值
+
+### Video标签
+
+### Waterfall 瀑布流
+
+### Watermark
+
+### TimeLine 时间轴
+
+### Text 渐变文字 动效文字
+
+### TextScroll 文字滚动
 
 * props :  modelValue 一个数组，传入打开的 collapseItem
 * props ： accordion 是否是手风琴格式
@@ -127,9 +153,17 @@ button 组件本质其实就是添加class
 
 ### Form
 
-### ImgPreview
+### ImgPreview*
+
+* 基本功能
+  * 支持图片预览
+  * 支持组件引入方式预览
+  * 支持 直接调用方式预览
+* 组件本质：通过h函数和render函数挂载，设置原来的document.documentElement.style.overflow = hidden 防止点透事件
 
 ### ImgClip 截图
+
+* 因为html2canvas 局限性，现在暂时不写
 
 ### LazyloadImg
 

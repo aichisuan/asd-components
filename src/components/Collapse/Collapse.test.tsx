@@ -63,7 +63,6 @@ describe("Collapse.vue", () => {
 
     await secondHeader.trigger('click');
     expect(onChange).toHaveBeenCalledWith(["2"]);
-    console.log(wrapper.html());
     expect(secondContent.isVisible()).toBeTruthy();
   })
 

@@ -32,7 +32,7 @@ export interface NumberAnimationProps {
   to?: number // 结束值
   duration?: number // 动画持续时间
   fixed?: number // 保留小数位
-  autoPlay?: boolean // 是否自动播放
+  autoplay?: boolean // 是否自动播放
   prefix?: string // 前缀
   suffix?: string // 后缀
   thousandsSeparator?: string // 千分位分隔符

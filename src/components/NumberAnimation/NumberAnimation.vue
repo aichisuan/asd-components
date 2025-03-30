@@ -5,25 +5,26 @@
 </template>
 
 <script setup lang="ts">
-import { formatNumber } from '@/common/number';
+import { formatNumber } from '../../common/number';
 import { type CSSProperties, ref, watchEffect, watch, onMounted, computed } from 'vue';
 import { useTransition, TransitionPresets } from '@vueuse/core';
-import type { NumberAnimationProps, NumberAnimationEvent, NumberAnimationExports} from './types';
+import type { NumberAnimationProps, NumberAnimationEvent, NumberAnimationExports } from './types';
 
 const props = withDefaults(defineProps<NumberAnimationProps>(), {
   from: 0,
   to: 10000,
-  duration: 20000,
-  autoPlay: true,
+  duration: 3000,
+  autoplay: true,
   fixed: 0,
   prefix: '',
   suffix: '',
   thousandsSeparator: ',',
   decimalSeparator: '.',
-  numberStyle: () =>
-    ({
-      color: 'red',
-    } as CSSProperties),
+  numberStyle: () => ({
+    fontSize: '20px',
+    color: '#000',
+    fontWeight: 'normal',
+  } as CSSProperties),
   transition: 'easeInOutCubic',
 });
 
@@ -36,21 +37,21 @@ watchEffect(() => (sourceNumber.value = props.from));
 watch(
   () => [props.from, props.to],
   () => {
-    if (props.autoPlay) {
-      startPlay()
+    if (props.autoplay) {
+      startPlay();
     }
   },
   {
-    deep: true
+    deep: true,
   }
-)
+);
 
 const startPlay = () => {
   sourceNumber.value = props.to;
 };
 
 onMounted(() => {
-  if (props.autoPlay) {
+  if (props.autoplay) {
     startPlay();
   }
 });
@@ -59,10 +60,10 @@ const showValue = useTransition(sourceNumber, {
   duration: props.duration,
   transition: TransitionPresets[props.transition],
   onFinished: () => {
-    emits('onStart');
+    emits('onEnd');
   },
   onStarted: () => {
-    emits('onEnd');
+    emits('onStart');
   },
 });
 

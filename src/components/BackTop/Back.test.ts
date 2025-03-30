@@ -63,7 +63,6 @@ describe('BackTop.vue', () => {
     });
 
     const backTopEl = wrapper.find('.as-back-top');
-    console.log(backTopEl.attributes('style'));
     expect(backTopEl.attributes('style')).toContain('right: 50px;');
     expect(backTopEl.attributes('style')).toContain('bottom: 50px;');
     expect(backTopEl.attributes('style')).toContain('background-color: rgb(52, 152, 219);');

@@ -31,7 +31,7 @@ describe('Tooltip', () => {
     const triggerEl = wrapper.find('#target');
 
     const tooltipWrapper = wrapper.findComponent(Tooltip);
-    console.log(triggerEl.html(), '------');
+
 
     expect(wrapper.find('.as-tooltip__popper').exists()).toBeFalsy();
     expect(wrapper.find('.as-tooltip').exists()).toBeTruthy();

@@ -66,7 +66,6 @@ describe('Select.vue', () => {
     expect(wrapper.find('.as-select__menu-item').isVisible()).toBeTruthy();
     // await document.body.click();
     // await rAF();
-    // console.log(wrapper.html(), '------');
     // width is 0 when not visible
     // expect(wrapper.find('.as-select__menu-item')).toBeFalsy();
   });

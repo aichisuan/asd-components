@@ -14,14 +14,12 @@ describe('Button.vue', () => {
         default: 'button'
       }
     })
-    console.log(wrapper.html())
     expect(wrapper.classes()).toContain('as-button--primary')
     // slot 这里可以用 get 或者 find
     expect(wrapper.get('button').text()).toBe('button')
     // events
     wrapper.get('button').trigger('click')
     // 打印事件是否触发
-    console.log(wrapper.emitted())
     // 是否有这个属性
     expect(wrapper.emitted()).toHaveProperty('click')
   })
@@ -53,7 +51,6 @@ describe('Button.vue', () => {
         stubs: ['FontAwesomeIcon']
       }
     })
-    console.log(wrapper.html())
     // 判断Icon组件是否存在 直接使用findComponent 对于组件的测试
     const iconElement = wrapper.findComponent(FontAwesomeIcon)
     expect(iconElement.exists()).toBeTruthy()
@@ -72,7 +69,6 @@ describe('Button.vue', () => {
         stubs: ['Icon']
       }
     })
-    console.log(wrapper.html())
     const iconElement = wrapper.findComponent(Icon)
     expect(iconElement.exists()).toBeTruthy()
     expect(iconElement.attributes('icon')).toBe('spinner')

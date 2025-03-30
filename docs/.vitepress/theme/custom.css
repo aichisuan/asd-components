@@ -115,3 +115,14 @@ p {
 .flex {
   display: flex;
 }
+
+
+a {
+  text-decoration: none; /* 去除下划线 */
+  color: inherit; /* 使用父元素的颜色 */
+}
+
+a:hover {
+  text-decoration: none; /* 悬停时也不显示下划线 */
+  color: inherit; /* 悬停时保持颜色一致 */
+}

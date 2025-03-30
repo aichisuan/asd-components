@@ -12,6 +12,8 @@ import Select from './components/Select/Select.vue';
 import ImgPreview from './components/ImgPreview/ImgPreview.vue';
 const openedValue = ref<string[]>(['a']);
 
+import TextScroll from './components/TextScroll/TextScroll.vue';
+
 const imgDatas = [
   'https://img2.baidu.com/it/u=1565288163,4104186569&fm=253&app=138&f=JPEG?w=675&h=949',
   'https://pic.rmb.bdstatic.com/bjh/240625/fe48c9d6737e8830397fdcfad14c88711180.jpeg',
@@ -80,12 +82,32 @@ const testInputVal = ref<string>('');
 const hanldeShowImgPreview = () => {
   showImgPreview.value = true;
 };
+const textScrollList = [
+  {
+    id: 0,
+    text: "周杰伦的歌曲有增无减，依然是华语乐坛的天王",
+  },
+  {
+    id: 1,
+    text: "fdjalksdfj;asjdf;jas;djfa;ljsd;klf",
+  },
+  {
+    id: 2,
+    text: "rfaksjdflasjdfkljas;djfak;lsdjfa;kjds",
+  },
+];
+
+
 </script>
 
 <template>
   <main>
     <ImgPreview :imgsData="imgDatas" :showIndex="0" :options="{ clickMaskClose: true, closeIcon: true }" v-model:visible="showImgPreview"></ImgPreview>
     <Button round @click="hanldeShowImgPreview">Round Button</Button>
+    <br>
+    <br>
+    <!-- <TextScroll :textScrollList="textScrollList"></TextScroll>
+    <TextScroll :textScrollList="textScrollList" :is-vertical="true"></TextScroll> -->
     <!-- 
     <Select v-model="testSelectVal" placeholder="基础选择器，请选择" :options="selectOptions" />
     <Button round @click="hanldeShowImgPreview">Round Button</Button>

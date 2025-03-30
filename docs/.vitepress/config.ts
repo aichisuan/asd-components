@@ -63,6 +63,7 @@ export default defineConfig({
               { text: 'Message 消息弹窗', link: '/components/Message' },
               { text: 'Switch 开关', link: '/components/Switch' },
               { text: 'Select', link: '/components/Select' },
+              { text: 'TextScroll', link: '/components/TextScroll' },
               { text: 'Tooltip', link: '/components/Tooltip' },
             ],
           },

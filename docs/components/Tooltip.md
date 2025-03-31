@@ -1,5 +1,5 @@
 ---
-title: Tooltip | as-components
+title: Tooltip | asd-components
 description: Tooltip 组件的文档
 ---
 

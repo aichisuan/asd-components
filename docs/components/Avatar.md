@@ -1,5 +1,5 @@
 ---
-title: Avatar | as-components
+title: Avatar | asd-components
 description: Avatar 组件的文档
 ---
 

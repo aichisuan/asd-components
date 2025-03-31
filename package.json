@@ -1,21 +1,54 @@
 {
-  "name": "as-component",
-  "version": "0.0.1",
-  "private": true,
+  "name": "asd-components",
+  "version": "1.0.0",
+  "description": "A Vue 3 component library",
+  "author": "aichisuan",
+  "license": "MIT",
+  "sideEffects": false,
+  "keywords": [
+    "vue",
+    "component",
+    "library",
+    "vue3",
+    "typescript",
+    "vite",
+    "UI"
+  ],
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/umd/asd-components.umd.js",
+  "module": "./dist/esm/asd-components.es.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/asd-components.es.js",
+      "require": "./dist/umd/asd-components.umd.js"
+    },
+    "./dist": {
+      "import": "./dist",
+      "require": "./dist"
+    },
+    "./dist/index.css": "./dist/index.css"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "npm run build-only && npm run move-style",
     "preview": "vite preview",
-    "build-only": "vite build",
+    "build-only": "run-p build-es build-umd",
+    "build-umd": "vite build --config vite.es.config.ts",
+    "build-es": "vite build --config vite.umd.config.ts",
     "type-check": "vue-tsc --build",
+    "move-style": "mv dist/esm/asd-components.css dist/index.css",
     "lint": "eslint . --fix",
     "test": "vitest",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:server": "vitepress serve docs",
     "docs:preview": "vitepress preview docs",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -45,6 +78,7 @@
     "eslint": "^9.14.0",
     "eslint-plugin-vue": "^9.30.0",
     "jsdom": "^25.0.1",
+    "move-file": "^3.1.0",
     "npm-run-all2": "^7.0.1",
     "postcss-color-mix": "^1.1.0",
     "postcss-each": "^1.1.0",
@@ -54,10 +88,12 @@
     "typescript": "~5.6.3",
     "unplugin-vue-macros": "^2.14.5",
     "vite": "^6.0.1",
+    "vite-plugin-dts": "^4.5.3",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-vue-devtools": "^7.6.5",
     "vitepress": "^1.6.3",
     "vitest": "^2.1.8",
+    "vue": "^3.5.13",
     "vue-tsc": "^2.1.10"
   },
   "config": {

@@ -36,7 +36,6 @@ const useMutationObserver = (target: Ref | Ref[] | HTMLElement | HTMLElement[], 
     if (observeTargets.value.length) {
       observer = new MutationObserver(callback);
       observeTargets.value.forEach((item) => {
-        console.log(item, 'item')
         if (item instanceof HTMLElement) {
           observer!.observe(item, options);
         }

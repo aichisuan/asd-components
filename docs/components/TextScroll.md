@@ -1,5 +1,5 @@
 ---
-title: TextScroll | as-components
+title: TextScroll | asd-components
 description: TextScroll 组件的文档
 ---
 # TextScroll 文字滚动组件

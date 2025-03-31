@@ -4,7 +4,6 @@ import { Comment, computed, reactive, Text, useSlots, type VNode, } from 'vue';
 // 如果slotsName是字符串，返回一个computed，如果slotsName是数组，返回一个对象，对象的key是slotsName的元素，值是computed
 const useSlotsNamesExits = (slotsName: string | string[] = 'default') => {
   const slots = useSlots();
-  console.log(slots.icon, slots.default, 'slots--------');
   const checkSlot = (slotName: string) => {
     const slotsValue = slots[slotName]?.();
     

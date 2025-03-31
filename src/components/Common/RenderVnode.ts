@@ -1,5 +1,4 @@
 import { defineComponent } from "vue";
-import RenderVNode from '../../common/renderVNode';
 
 const RenderVNode = defineComponent({
   props: {

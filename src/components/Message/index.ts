@@ -1,4 +1,7 @@
 
 import { createMessage } from './method';
 
-export default createMessage;
+import { withInstall } from '../../common/install';
+
+export default withInstall(createMessage);
+

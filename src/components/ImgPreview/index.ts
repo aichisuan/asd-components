@@ -1,6 +1,7 @@
 import { h, render } from 'vue';
 import imgPreview from './ImgPreview.vue';
 import type { VisibleOptions } from './types';
+import { withInstall } from '../../common/install';
 
 let instance: any = null;
 
@@ -54,4 +55,7 @@ imgPreview.destroy = () => {
   }
 };
 
-export default imgPreview;
+export type { ImgPreviewProps } from './types';
+
+
+export default withInstall(imgPreview);

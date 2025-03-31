@@ -1,5 +1,5 @@
 ---
-title: Input | as-components
+title: Input | asd-components
 description: Input 组件的文档
 ---
 # Input 输入框

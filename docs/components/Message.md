@@ -1,5 +1,5 @@
 ---
-title: Message | as-components
+title: Message | asd-components
 description: Message 组件的文档
 ---
 # Message 消息提示

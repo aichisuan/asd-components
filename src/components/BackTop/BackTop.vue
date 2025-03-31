@@ -1,6 +1,6 @@
 <template>
   <Transition name="fade-backtop">
-    <div v-show="isVisible" class="as-back-top" ref="backTopRef" :style="backTopStyle" @click="handleClick">
+    <div v-show="isVisible" class="as-back-top"ref="backTopRef" :style="backTopStyle" @click="handleClick">
       <Tooltip v-if="tooltipText" :content="tooltipText" v-bind="tooltipProps">
         <div class="as-back-top__content">
           <slot>
@@ -36,6 +36,8 @@ const props = withDefaults(defineProps<BackTopProps>(), {
   isInListenEl: false,
 });
 
+type Position = 'relative' | 'absolute' | 'fixed';
+
 const emits = defineEmits<BackTopEmits>();
 
 const backTopRef = ref<HTMLElement | null>(null);
@@ -61,7 +63,7 @@ const backTopStyle = computed(() => ({
   color: props.color,
   zIndex: props.zIndex,
   borderRadius: props.shape === 'circle' ? '50%' : props.shape === 'rect' ? '0' : '8px',
-  position: props.listenEl && props.isInListenEl ? 'absolute' : 'fixed',
+  position: props.listenEl && props.isInListenEl ? ('absolute') as Position : ('fixed') as Position,
 }));
 
 const handleClick = (e: Event) => {

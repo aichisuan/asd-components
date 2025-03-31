@@ -1,5 +1,5 @@
 ---
-title: Switch | as-components
+title: Switch | asd-components
 description: Switch 组件的文档
 ---
 

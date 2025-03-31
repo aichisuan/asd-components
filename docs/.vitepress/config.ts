@@ -7,7 +7,7 @@ import { containerPreview, componentPreview } from '@vitepress-demo-preview/plug
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'as-components',
+  title: 'asd-components',
   description: '一个致力于解决前端pc疑难杂症的按需引入组件库',
   lang: 'zh-CN',
   vite: {
@@ -71,6 +71,6 @@ export default defineConfig({
       },
     ],
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/aichisuan/as-components' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/aichisuan/asd-components' }],
   },
 });

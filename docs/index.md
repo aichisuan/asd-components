@@ -16,7 +16,7 @@ hero:
       link: /configMd/start
     - theme: alt
       text: GitHub
-      link: 'https://github.com/aichisuan/as-components'
+      link: 'https://github.com/aichisuan/asd-components'
 
 features:
   - icon: 💡

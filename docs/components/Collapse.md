@@ -1,5 +1,5 @@
 ---
-title: Collapse | as-components
+title: Collapse | asd-components
 description: Collapse 组件的文档
 ---
 # Collapse 折叠面板

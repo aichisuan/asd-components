@@ -1,5 +1,5 @@
 ---
-title: Input | as-components
+title: Input | asd-components
 description: ImgPreview 组件的文档
 ---
 

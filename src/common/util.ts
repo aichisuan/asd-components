@@ -17,7 +17,6 @@ export const getScrollParent = (el: HTMLElement | null): HTMLElement | null => {
     return el;
   }
   const parentEl = getParentEl(el);
-  // console.log(parentEl, 'parentEl');
   return getScrollParent(parentEl!);
 };
 

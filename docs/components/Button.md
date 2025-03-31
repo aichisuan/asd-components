@@ -1,5 +1,5 @@
 ---
-title: Button | as-components
+title: Button | asd-components
 description: Button 组件的文档
 ---
 # Button 按钮
@@ -27,7 +27,8 @@ description: Button 组件的文档
 ## loading状态按钮
 
 通过设置loading属性为true来给按钮加上加载中状态
-`<preview path="../demo/Button/Loading.vue" language="vue"></preview>`
+
+<preview path="../demo/Button/Loading.vue" language="vue"></preview>
 
 ## 图标按钮
 

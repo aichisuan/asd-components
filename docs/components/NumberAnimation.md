@@ -1,5 +1,5 @@
 ---
-title: NumberAnimation | as-components
+title: NumberAnimation | asd-components
 description: NumberAnimation 组件的文档
 ---
 

@@ -8,6 +8,14 @@
     "docs/**/*.d.ts",
     "docs/**/*.tsx",
   ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+    },
+  },
   "files": [],
   "references": [
     {

@@ -1,0 +1,73 @@
+:root {
+  /* colors */
+  --as-color-white: #ffffff;
+  --as-color-black: #000000;
+  --colors: (
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
+
+  @each $val, $color in var(--colors) {
+    --as-color-$(val): $(color);
+    @for $i from 3 to 9 by 2 {
+      --as-color-$(val)-light-$(i): mix(#fff, $(color), .$(i))
+    }
+    --as-color-$(val)-light-8: mix(#fff, $(color), .8);
+    --as-color-$(val)-dark-2: mix(#000, $(color), .2);
+  }
+
+  --as-bg-color: #ffffff;
+  --as-bg-color-page: #f2f3f5;
+  --as-bg-color-overlay: #ffffff;
+  --as-text-color-primary: #303133;
+  --as-text-color-regular: #606266;
+  --as-text-color-secondary: #909399;
+  --as-text-color-placeholder: #a8abb2;
+  --as-text-color-disabled: #c0c4cc;
+  --as-border-color: #dcdfe6;
+  --as-border-color-light: #e4e7ed;
+  --as-border-color-lighter: #ebeef5;
+  --as-border-color-extra-light: #f2f6fc;
+  --as-border-color-dark: #d4d7de;
+  --as-border-color-darker: #cdd0d6;
+  --as-fill-color: #f0f2f5;
+  --as-fill-color-light: #f5f7fa;
+  --as-fill-color-lighter: #fafafa;
+  --as-fill-color-extra-light: #fafcff;
+  --as-fill-color-dark: #ebedf0;
+  --as-fill-color-darker: #e6e8eb;
+  --as-fill-color-blank: #ffffff;
+
+  /* border */
+  --as-border-width: 1px;
+  --as-border-style: solid;
+  --as-border-color-hover: var(--as-text-color-disabled);
+  --as-border: var(--as-border-width) var(--as-border-style) var(--as-border-color);
+  --as-border-radius-base: 4px;
+  --as-border-radius-small: 2px;
+  --as-border-radius-round: 20px;
+  --as-border-radius-circle: 100%;
+
+  /*font*/
+  --as-font-size-extra-large: 20px;
+  --as-font-size-large: 18px;
+  --as-font-size-medium: 16px;
+  --as-font-size-base: 16px;
+  --as-font-size-small: 13px;
+  --as-font-size-extra-small: 12px;
+  --as-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
+  --as-font-weight-primary: 500;
+
+  /*disabled*/
+  --as-disabled-bg-color: var(--as-fill-color-light);
+  --as-disabled-text-color: var(--as-text-color-placeholder);
+  --as-disabled-border-color: var(--as-border-color-light);
+  
+  /*animation*/
+  --as-transition-duration: .3s;
+  --as-transition-duration-fast: .2s;
+
+}

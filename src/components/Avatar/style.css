@@ -1,0 +1,82 @@
+.as-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 默认大小 */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  border: 1px solid transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  cursor: auto;
+  outline: none;
+  &:hover {
+    color: #fff;
+  }
+
+  &.as-avatar--small {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 20px;
+    &.as-avatar--square {
+      border-radius: 4px;
+    }
+  }
+
+  &.as-avatar--large {
+    width: 56px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 40px;
+    &.as-avatar--square {
+      border-radius: 8px;
+    }
+  }
+
+  &.as-avatar--icon {
+    line-height: normal;
+  }
+
+  &.as-avatar--circle {
+    border-radius: 50%;
+  }
+
+  &.as-avatar--square {
+    border-radius: 6px;
+  }
+
+  &.as-avatar--rotate {
+    /* 悬浮后 增加一个越来越快的无限旋转的动画 */
+    transform: rotate(0deg);
+    &:hover {
+      transform: rotate(36000deg);
+      transition-delay: 1s;
+      transition-property: all;
+      transition-duration: 29s;
+      transition-timing-function: cubic-bezier(0.34, 0, 0.84, 1);
+    }
+  }
+
+  .as-avatar__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  &.as-avatar--link {
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
+

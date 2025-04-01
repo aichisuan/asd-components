@@ -1,0 +1,28 @@
+.fade-backtop-enter-active,
+.fade-backtop-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-backtop-enter-from,
+.fade-backtop-leave-to {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.as-back-top {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.as-back-top__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 16px;
+}

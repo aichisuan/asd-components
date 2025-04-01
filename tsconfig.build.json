@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "declaration": true, // 启用类型声明文件生成
+    "emitDeclarationOnly": true, // 仅生成类型声明文件
+    "declarationDir": "./dist/types", // 类型文件输出目录
+    "outDir": "./dist", // 输出目录
+    "baseUrl": ".", // 基础路径
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/index.ts",
+    "src/components/**/*",
+    "src/hooks/**/*",
+    "src/styles/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/components/**/*.test.ts",
+    "src/components/**/*.test.tsx",
+  ]
+}

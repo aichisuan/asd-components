@@ -1,0 +1,1 @@
+import{F as s}from"./asd-components.es.CBeiFvqK.js";import{p as t,o as l,c as r,G as c,k as n}from"./framework.ut5QMzK5.js";import"./theme.DlyCYkgC.js";const m={class:"switch-wrap"},f={__name:"Basic",setup(p){const e=t(!1);return(u,a)=>(l(),r("div",m,[c(n(s),{modelValue:e.value,"onUpdate:modelValue":a[0]||(a[0]=o=>e.value=o)},null,8,["modelValue"])]))}};export{f as default};

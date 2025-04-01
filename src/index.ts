@@ -44,6 +44,7 @@ export { default as Button } from './components/Button';
 // Collapse 折叠面板
 export type * from './components/Collapse';
 export { default as Collapse } from './components/Collapse';
+export { default as CollapseItem } from './components/Collapse/itemIndex';
 
 // Dropdown 下拉菜单
 export type * from './components/Dropdown';

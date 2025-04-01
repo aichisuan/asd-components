@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import Switch from '@/components/Switch/Switch.vue';
+import { Switch } from 'asd-components';
 import { ref } from 'vue';
 
 const checked = ref(1);

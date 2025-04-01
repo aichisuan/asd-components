@@ -11,9 +11,9 @@
 </template>
 
 <script setup>
-import ImgPreview from '@/components/ImgPreview/ImgPreview.vue';
+import { ImgPreview } from 'asd-components';
 import { ref, reactive } from 'vue';
-import Button from '@/components/Button/Button.vue';
+import { Button } from 'asd-components';
 
 const showImgPreview = ref(false);
 

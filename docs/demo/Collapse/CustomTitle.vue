@@ -22,9 +22,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Collapse from '@/components/Collapse/Collapse.vue';
-import CollapseItem from '@/components/Collapse/CollapseItem.vue';
-import Icon from '@/components/Icon/Icon.vue';
+import { Collapse } from 'asd-components';
+import { CollapseItem } from 'asd-components';
+import { Icon } from 'asd-components';
 
 const openedValue = ref<string[]>(['c']);
 </script>

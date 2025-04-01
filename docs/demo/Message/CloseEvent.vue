@@ -3,8 +3,8 @@
 </template>
 
 <script setup>
-import Button from '@/components/Button/Button.vue';
-import  Message  from '@/components/Message';
+import { Button } from 'asd-components';
+import { Message } from 'asd-components';
 
 const showMessageWithCloseEvent = () => {
   Message({

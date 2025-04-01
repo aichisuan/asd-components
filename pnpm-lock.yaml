@@ -26,9 +26,6 @@ dependencies:
   lodash-es:
     specifier: ^4.17.21
     version: 4.17.21
-  vue:
-    specifier: ^3.5.13
-    version: 3.5.13(typescript@5.6.3)
 
 devDependencies:
   '@tsconfig/node22':
@@ -64,6 +61,9 @@ devDependencies:
   '@vue/tsconfig':
     specifier: ^0.7.0
     version: 0.7.0(typescript@5.6.3)(vue@3.5.13)
+  asd-components:
+    specifier: ^1.0.0
+    version: 1.0.0(typescript@5.6.3)
   axios:
     specifier: ^1.7.9
     version: 1.7.9
@@ -127,6 +127,12 @@ devDependencies:
   vitest:
     specifier: ^2.1.8
     version: 2.1.8(@types/node@22.10.2)(jsdom@25.0.1)
+  vue:
+    specifier: ^3.5.13
+    version: 3.5.13(typescript@5.6.3)
+  vue-router:
+    specifier: '4'
+    version: 4.5.0(vue@3.5.13)
   vue-tsc:
     specifier: ^2.1.10
     version: 2.2.0(typescript@5.6.3)
@@ -1243,21 +1249,18 @@ packages:
   /@fortawesome/fontawesome-common-types@6.7.2:
     resolution: {integrity: sha512-Zs+YeHUC5fkt7Mg1l6XTniei3k4bwG/yo3iFUtZWd/pMx9g3fdvkSK9E0FOC+++phXOka78uJcYb8JaFkW52Xg==}
     engines: {node: '>=6'}
-    dev: false
 
   /@fortawesome/fontawesome-svg-core@6.7.2:
     resolution: {integrity: sha512-yxtOBWDrdi5DD5o1pmVdq3WMCvnobT0LU6R8RyyVXPvFRd2o79/0NCuQoCjNTeZz9EzA9xS3JxNWfv54RIHFEA==}
     engines: {node: '>=6'}
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.7.2
-    dev: false
 
   /@fortawesome/free-solid-svg-icons@6.7.2:
     resolution: {integrity: sha512-GsBrnOzU8uj0LECDfD5zomZJIjrPhIlWU82AHwa2s40FKH+kcxQaBvBo3Z4TxyZHIyX8XTDxsyA33/Vx9eFuQA==}
     engines: {node: '>=6'}
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.7.2
-    dev: false
 
   /@fortawesome/vue-fontawesome@3.0.8(@fortawesome/fontawesome-svg-core@6.7.2)(vue@3.5.13):
     resolution: {integrity: sha512-yyHHAj4G8pQIDfaIsMvQpwKMboIZtcHTUvPqXjOHyldh1O1vZfH4W03VDPv5RvI9P6DLTzJQlmVgj9wCf7c2Fw==}
@@ -1267,7 +1270,6 @@ packages:
     dependencies:
       '@fortawesome/fontawesome-svg-core': 6.7.2
       vue: 3.5.13(typescript@5.6.3)
-    dev: false
 
   /@humanfs/core@0.19.1:
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1530,7 +1532,6 @@ packages:
 
   /@popperjs/core@2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
-    dev: false
 
   /@quansync/fs@0.1.1:
     resolution: {integrity: sha512-sx8J1O/+j2lqs8MvsEz6rs/6UAUpCb4fu7C6EqtMqzbS3CmqLkTDTOMK+DrWukvyUuHzl8DhMjfNJzQDTqfGJg==}
@@ -2621,6 +2622,10 @@ packages:
       he: 1.2.0
     dev: true
 
+  /@vue/devtools-api@6.6.4:
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
+    dev: true
+
   /@vue/devtools-api@7.7.2:
     resolution: {integrity: sha512-1syn558KhyN+chO5SjlZIwJ8bV/bQ1nOVTG66t2RbG66ZGekyiYNmRO7X9BJCXQqPsFHlnksqvPhce2qpzxFnA==}
     dependencies:
@@ -3074,6 +3079,21 @@ packages:
 
   /argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
+    dev: true
+
+  /asd-components@1.0.0(typescript@5.6.3):
+    resolution: {integrity: sha512-TnpwaWjLRUK7bTeHcR6VNZDhenoGCv4cRGuh2ifJS7jQorvwQf2LBu5QaXE6gwjH78LsUeFWPxq4dlOYijPY7w==}
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 6.7.2
+      '@fortawesome/free-solid-svg-icons': 6.7.2
+      '@fortawesome/vue-fontawesome': 3.0.8(@fortawesome/fontawesome-svg-core@6.7.2)(vue@3.5.13)
+      '@popperjs/core': 2.11.8
+      '@vueuse/core': 13.0.0(vue@3.5.13)
+      decimal.js: 10.5.0
+      lodash-es: 4.17.21
+      vue: 3.5.13(typescript@5.6.3)
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /assertion-error@2.0.1:
@@ -4685,7 +4705,6 @@ packages:
 
   /lodash-es@4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
-    dev: false
 
   /lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
@@ -6550,6 +6569,15 @@ packages:
       semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vue-router@4.5.0(vue@3.5.13):
+    resolution: {integrity: sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      vue: 3.5.13(typescript@5.6.3)
     dev: true
 
   /vue-tsc@2.2.0(typescript@5.6.3):

@@ -5,7 +5,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import Select from '@/components/Select/Select.vue';
+import { Select } from 'asd-components';
 const selected1 = ref('');
 const selected2 = ref('');
 const options1 = [

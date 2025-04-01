@@ -1,7 +1,7 @@
 
 <template>
     <Collapse v-model="openedValue">
-      <CollapseItem name="a" title="Title A">
+      <CollapseItem name="a" title="Title Aheadline title">
         <h1>headline title</h1>
         <div>this is content a aaa</div>
       </CollapseItem>
@@ -16,8 +16,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Collapse from '@/components/Collapse/Collapse.vue';
-import CollapseItem from '@/components/Collapse/CollapseItem.vue';
+import { Collapse } from 'asd-components';
+import { CollapseItem } from 'asd-components';
 
 const openedValue = ref<string[]>(['a']);
 </script>

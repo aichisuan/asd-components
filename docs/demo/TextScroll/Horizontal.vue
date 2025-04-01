@@ -1,10 +1,10 @@
 <template>
-  <TextScroll :textScrollList="list" />
+  <TextScroll :textScrollList="list" :horizontalSpeed="15"/>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import TextScroll from '@/components/TextScroll/TextScroll.vue';
+import { TextScroll } from 'asd-components';
 
 const list = ref([
   { id: '1', text: '这是第一条公告信息这是第一条公告信息' },

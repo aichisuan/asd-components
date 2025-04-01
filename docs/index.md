@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "as-compontents"
-  text: "一个致力于解决疑难的Vue3 组件库"
+  name: "asd-compontents"
+  text: "一个致力于解决前端问题的Vue3 组件库"
   tagline: 简洁至上  vue3 组件库  持续更新中
   image: 
     src: /img/logo.png
@@ -12,8 +12,8 @@ hero:
     style: 
   actions:
     - theme: brand
-      text: 快速开始
-      link: /configMd/start
+      text: 介绍
+      link: /configMd/special
     - theme: alt
       text: GitHub
       link: 'https://github.com/aichisuan/asd-components'

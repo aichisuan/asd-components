@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import BackTop from '@/components/BackTop/BackTop.vue';
+import { BackTop } from 'asd-components';
 
 const scrollRef = ref<HTMLElement | null>(null);
 </script>

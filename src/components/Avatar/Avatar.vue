@@ -27,9 +27,13 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults, computed } from 'vue';
+import { computed } from 'vue';
 import type { AvatarProps } from './types';
 import useSlotsNamesExits from '../../hooks/useSlotsNamesExits';
+
+defineOptions({
+  name: 'AAvatar',
+});
 
 const props = withDefaults(defineProps<AvatarProps>(), {
   bgColor: 'rgba(0, 0, 0, 0.15)',

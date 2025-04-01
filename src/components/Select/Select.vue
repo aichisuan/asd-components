@@ -51,8 +51,9 @@ import Icon from '../Icon/Icon.vue';
 import type { InputInstance } from '../Input/types';
 import { findOption } from './methods';
 
+
 defineOptions({
-  name: 'asSelect',
+  name: 'ASelect',
 });
 
 const props = defineProps<SelectProps>();

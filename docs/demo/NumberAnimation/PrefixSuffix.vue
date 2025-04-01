@@ -6,8 +6,8 @@
 
 <script setup>
 import { ref } from 'vue';
-import NumberAnimation from '@/components/NumberAnimation/NumberAnimation.vue';
-import Button from '@/components/Button/Button.vue';
+import { NumberAnimation } from 'asd-components';
+import { Button } from 'asd-components';
 
 const ref1 = ref(null)
 const ref2 = ref(null)

@@ -7,7 +7,7 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import ImgPreview from '@/components/ImgPreview';
-import Button from '@/components/Button/Button.vue';
+import { Button } from 'asd-components';
 
 const imgsData = reactive([
   'https://img2.baidu.com/it/u=1565288163,4104186569&fm=253&app=138&f=JPEG?w=675&h=949',

@@ -10,6 +10,10 @@ import { type CSSProperties, ref, watchEffect, watch, onMounted, computed } from
 import { useTransition, TransitionPresets } from '@vueuse/core';
 import type { NumberAnimationProps, NumberAnimationEvent, NumberAnimationExports } from './types';
 
+defineOptions({
+  name: 'ANumberAnimation',
+});
+
 const props = withDefaults(defineProps<NumberAnimationProps>(), {
   from: 0,
   to: 10000,

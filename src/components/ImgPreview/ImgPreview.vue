@@ -61,7 +61,11 @@ import { ref, reactive, computed, watch } from 'vue';
 import { downloadFileByURL, getInitOptions, getInitActiveImgStatus } from './method';
 import type { ImgPreviewEmits, RotateType } from './types';
 import type { ImgPreviewProps } from './types';
-import Icon from '@/components/Icon/Icon.vue';
+import { Icon } from 'asd-components';
+
+defineOptions({
+  name: 'AImgPreview',
+});
 
 // Props 和 Emits
 const props = withDefaults(defineProps<ImgPreviewProps>(), {

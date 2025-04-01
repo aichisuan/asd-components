@@ -10,7 +10,7 @@
 <script setup>
 
 import { ref } from 'vue';
-import TextScroll from '@/components/TextScroll/TextScroll.vue';
+import { TextScroll } from 'asd-components';
 
 const list = ref([
   { id: '1', text: '系统公告: 本周六维护升级' },

@@ -29,8 +29,8 @@
 
 <script setup>
 import { ref } from 'vue';
-import TextScroll from '@/components/TextScroll/TextScroll.vue';
-import Button from '@/components/Button/Button.vue';
+import { TextScroll } from 'asd-components';
+import { Button } from 'asd-components';
 
 const textScrollRef = ref(null);
 const textScrollRefVertical = ref(null);

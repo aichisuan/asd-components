@@ -6,9 +6,13 @@ description: Dropdown 组件的文档
 
 as-compoents Icon图标采用了[fontawesome图标库](https://fontawesome.com/search?o=r&s=solid) 完成图标功能, 您可以从[fontawesome图标库](https://fontawesome.com/search?o=r&s=solid) 查找到您想要的图标，然后填写对应的Icon属性，设置图标样式。
 
-## 基本使用
+## 基本使用1
 
 <preview path="../demo/Icon/Basic.vue" language="vue"></preview>
+
+## 基本使用2
+
+<preview path="../demo/Icon/Basic2.vue" language="vue"></preview>
 
 ## Icon API
 

@@ -2,8 +2,7 @@ import { defineConfig } from 'vitepress';
 // import VueMacros from 'unplugin-vue-macros';
 // import vueJsx from '@vitejs/plugin-vue-jsx';
 import { fileURLToPath, URL } from 'node:url';
-import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
-
+import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -28,9 +27,9 @@ export default defineConfig({
   },
   markdown: {
     config(md) {
-      md.use(containerPreview)
-      md.use(componentPreview)
-    }
+      md.use(containerPreview);
+      md.use(componentPreview);
+    },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -42,6 +41,7 @@ export default defineConfig({
       provider: 'local',
     },
     sidebar: [
+      { text: '介绍', link: '/configMd/special' },
       { text: '安装', link: '/configMd/install' },
       { text: '快速开始', link: '/configMd/start' },
       { text: '组件总览', link: '/configMd/all' },

@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { ref, h, onMounted } from 'vue';
-import BackTop from '@/components/BackTop/BackTop.vue';
+import { BackTop } from 'asd-components';
 const progressPathRef = ref<SVGPathElement | null>(null);
 const pathLength = ref<number>(0);
 const updatePregress = (progress: number) => {

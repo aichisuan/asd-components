@@ -48,7 +48,7 @@
 </template>
 
 <script lang="ts" setup>
-import Tooltip from '@/components/Tooltip/Tooltip.vue';
+import { Tooltip } from 'asd-components';
 import Button from '@/components/Button/Button.vue'
 </script>
 

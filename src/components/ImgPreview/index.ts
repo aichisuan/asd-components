@@ -55,7 +55,7 @@ imgPreview.destroy = () => {
   }
 };
 
-export type { ImgPreviewProps } from './types';
+export * from './types';
 
 
 export default withInstall(imgPreview);

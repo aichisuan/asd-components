@@ -6,5 +6,5 @@
 </template>
 
 <script setup>
-import Avatar from '@/components/Avatar/Avatar.vue';
+import { Avatar } from 'asd-components';
 </script>

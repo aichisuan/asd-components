@@ -1,5 +1,5 @@
 import TextScroll from './TextScroll.vue';
-export type { TextScrollProps } from './types';
+export * from './types';
 import { withInstall } from '../../common/install';
 
 export default withInstall(TextScroll);

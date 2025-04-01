@@ -1,5 +1,5 @@
 import NumberAnimation from './NumberAnimation.vue';
-export type { NumberAnimationProps } from './types';
+export * from './types';
 import { withInstall } from '../../common/install';
 
 export default withInstall(NumberAnimation);

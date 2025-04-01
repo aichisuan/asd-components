@@ -34,60 +34,60 @@ export type { AvatarProps } from './components/Avatar';
 export { default as Avatar } from './components/Avatar';
 
 // BackTop 回到顶部
-export type {BackTopProps} from './components/BackTop';
+export type * from './components/BackTop';
 export { default as BackTop } from './components/BackTop';
 
 // Button 按钮
-export type { ButtonProps } from './components/Button';
+export type * from './components/Button';
 export { default as Button } from './components/Button';
 
 // Collapse 折叠面板
-export type { CollapseProps } from './components/Collapse';
+export type * from './components/Collapse';
 export { default as Collapse } from './components/Collapse';
 
 // Dropdown 下拉菜单
-export type {DropdownProps} from './components/Dropdown';
+export type * from './components/Dropdown';
 export { default as Dropdown } from './components/Dropdown';
 
 // Icon 图标
-export type { IconProps } from './components/Icon';
+export type * from './components/Icon';
 export { default as Icon } from './components/Icon';
 
 // ImgPreview 图片预览
-export type { ImgPreviewProps } from './components/ImgPreview';
+export type * from './components/ImgPreview';
 export { default as ImgPreview } from './components/ImgPreview';
 
 
 // Input 输入框
-export type { InputProps } from './components/Input';
+export type * from './components/Input';
 export { default as Input } from './components/Input';
 
 // Message 消息提示
-// export type { MessageProps } from './components/Message';
+export type * from './components/Message';
 export { default as Message } from './components/Message';
 
 
 // NumberAnimation 数字动画
-export type { NumberAnimationProps } from './components/NumberAnimation';
+export type * from './components/NumberAnimation';
 export { default as NumberAnimation } from './components/NumberAnimation';
 
 
 // Select 选择器
-export type { SelectProps } from './components/Select';
+export type * from './components/Select';
 export { default as Select } from './components/Select';
 
 
 // Switch 开关
-export type { SwitchProps } from './components/Switch';
+export type * from './components/Switch';
 export { default as Switch } from './components/Switch';
 
 // TextScroll 滚动文本
-export type { TextScrollProps } from './components/TextScroll';
+export type * from './components/TextScroll';
 export { default as TextScroll } from './components/TextScroll';
 
 
 // Tooltip 提示
-export type { TooltipProps } from './components/Tooltip';
+export type * from './components/Tooltip';
 export { default as Tooltip } from './components/Tooltip';
 
 

@@ -1,6 +1,4 @@
-<script setup>
-import Button from '@/components/Button/Button.vue';
-</script>
+
 <template>
   <div class="mb2">
     <Button>Default</Button>
@@ -35,3 +33,7 @@ import Button from '@/components/Button/Button.vue';
     <Button type="danger" icon="fa-user" circle />
   </div>
 </template>
+
+<script setup>
+import { Button } from 'asd-components';
+</script>

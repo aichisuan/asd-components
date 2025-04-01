@@ -8,6 +8,6 @@
 </template>
 
 <script setup>
-import Avatar from '@/components/Avatar/Avatar.vue';
-import Icon from '@/components/Icon/Icon.vue';
+import { Avatar } from 'asd-components';
+import { Icon } from 'asd-components';
 </script>

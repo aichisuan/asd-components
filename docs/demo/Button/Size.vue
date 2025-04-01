@@ -23,5 +23,5 @@
 </template>
 
 <script setup>
-import Button from '@/components/Button/Button.vue';
+import { Button } from 'asd-components';
 </script>

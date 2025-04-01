@@ -1,12 +1,12 @@
 <template>
-  <Button @click="showMessage" type="primary">展示消息弹窗</Button>
+  <Button @click="showMessage" type="primary" class="mb2">展示消息弹窗</Button>
   <Button @click="showMessageShowVNode" type="primary">showVNode</Button>
 </template>
 
 <script setup>
 import { h } from 'vue';
-import Message from '@/components/Message';
-import Button from '@/components/Button/Button.vue';
+import { Message } from 'asd-components';
+import { Button } from 'asd-components';
 
 const showMessage = () => {
   Message({

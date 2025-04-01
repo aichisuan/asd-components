@@ -4,8 +4,8 @@
 </template>
 
 <script setup>
-import  Message  from '@/components/Message';
-import Button from '@/components/Button/Button.vue';
+import { Message } from 'asd-components';
+import { Button } from 'asd-components';
 
 const showShortMessage = () => {
   Message({

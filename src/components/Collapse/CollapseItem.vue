@@ -40,6 +40,10 @@ import { collapseInjectionKey } from './types';
 import type { CollapseItemProps } from './types';
 import Icon from '../Icon/Icon.vue';
 
+defineOptions({
+  name: 'ACollapseItem',
+});
+
 const props = defineProps<CollapseItemProps>();
 
 const CollapseContext = inject(collapseInjectionKey);

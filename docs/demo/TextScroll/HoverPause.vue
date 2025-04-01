@@ -8,7 +8,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import TextScroll from '@/components/TextScroll/TextScroll.vue';
+import { TextScroll } from 'asd-components';
 
 const list = ref([
   { id: '1', text: '鼠标悬停时滚动会暂停鼠标悬停时滚动会暂停' },

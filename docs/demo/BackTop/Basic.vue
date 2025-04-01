@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import BackTop from '@/components/BackTop/BackTop.vue';
+import { BackTop } from 'asd-components';
 const updatePregress = (progress: number) => {
   console.log('当前滚动进度：', progress);
 };

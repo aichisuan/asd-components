@@ -109,6 +109,11 @@
 import { ref, computed, watch, nextTick, onUnmounted, onMounted } from 'vue';
 import type { TextScrollProps, Item } from './types';
 import { clearAf, requestAf } from '../../common/util';
+
+defineOptions({
+  name: 'ATextScroll',
+});
+
 const props = withDefaults(defineProps<TextScrollProps>(), {
   textScrollList: () => [],
   width: '100%',

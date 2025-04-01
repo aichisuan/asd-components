@@ -9,9 +9,9 @@
 
 <script setup lang="ts">
 import { ref, h } from 'vue';
-import Dropdown from '@/components/Dropdown/Dropdown.vue';
-import type { MenuOptionItem } from '@/components/Dropdown/types';
-import Icon from '@/components/Icon/Icon.vue';
+import { Dropdown } from 'asd-components';
+import type { MenuOptionItem } from 'asd-components';
+import { Icon } from 'asd-components';
 
 const menuOptions: MenuOptionItem[] = [
   { key: 1, label: h('b', 'item1') },

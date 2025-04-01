@@ -24,6 +24,10 @@ import type { BackTopProps, BackTopEmits } from './types';
 import { getScrollParent, throttleLast } from '../../common/util';
 import Icon from '../Icon/Icon.vue';
 
+defineOptions({
+  name: 'ABackTop',
+});
+
 const props = withDefaults(defineProps<BackTopProps>(), {
   right: '30px',
   bottom: '30px',

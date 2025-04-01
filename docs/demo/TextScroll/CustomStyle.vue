@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import TextScroll from '@/components/TextScroll/TextScroll.vue';
+import { TextScroll } from 'asd-components';
 import { ref } from 'vue';
 
 const list = ref([

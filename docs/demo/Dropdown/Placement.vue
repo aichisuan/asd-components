@@ -60,8 +60,8 @@
 
 <script setup lang="ts">
 import { ref, h } from 'vue';
-import Dropdown from '@/components/Dropdown/Dropdown.vue';
-import type { MenuOptionItem } from '@/components/Dropdown/types';
+import { Dropdown } from 'asd-components';
+import type { MenuOptionItem } from 'asd-components';
 
 const menuOptions: MenuOptionItem[] = [
   { key: 1, label: 'item1' },

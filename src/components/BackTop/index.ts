@@ -1,5 +1,5 @@
 import BackTop from './BackTop.vue';
-export type { BackTopProps } from './types';
+export * from './types';
 import { withInstall } from '../../common/install';
 
 export default withInstall(BackTop);

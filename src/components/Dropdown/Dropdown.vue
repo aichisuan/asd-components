@@ -40,6 +40,10 @@ import type { TooltipInstance } from '../Tooltip/types';
 import RenderVNode from '../../common/renderVNode';
 import type { MenuOptionItem } from './types';
 
+defineOptions({
+  name: 'ADropdown',
+});
+
 
 const props = withDefaults(defineProps<DropdownProps>(), {
   trigger: 'hover',

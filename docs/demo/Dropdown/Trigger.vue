@@ -21,9 +21,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Dropdown from '@/components/Dropdown/Dropdown.vue';
-import type { MenuOptionItem } from '@/components/Dropdown/types';
-import Button from '@/components/Button/Button.vue';
+import { Dropdown } from 'asd-components';
+import type { MenuOptionItem } from 'asd-components';
+import { Button } from 'asd-components';
 import { TooltipInstance } from '@/components/Tooltip/types';
 
 const menuOptions: MenuOptionItem[] = [

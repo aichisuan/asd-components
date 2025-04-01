@@ -6,6 +6,10 @@ import useEventListener from '../../hooks/useEventListener';
 import Icon from '../Icon/Icon.vue';
 import RenderVNode from '../../common/renderVNode';
 
+defineOptions({
+  name: 'AMessage',
+});
+
 const props = withDefaults(defineProps<MessageProps>(), {
   type: 'info',
   message: '',

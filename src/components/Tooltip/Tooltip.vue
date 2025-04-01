@@ -24,7 +24,7 @@ import { debounce } from 'lodash-es';
 import userClickOutside from '../../hooks/useClickOutside';
 
 defineOptions({
-  name: 'AsTooltip',
+  name: 'ATooltip',
 });
 
 const isOpen = ref(false);

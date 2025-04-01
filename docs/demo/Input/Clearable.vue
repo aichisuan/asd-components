@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Input from '@/components/Input/Input.vue';
+import { Input } from 'asd-components';
 
 const value = ref('');
 </script>

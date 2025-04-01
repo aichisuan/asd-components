@@ -8,6 +8,8 @@ import 'vitepress/dist/client/theme-default/styles/components/vp-code-group.css'
 import '../../../src/styles/index.css'
 import './custom.css'
 
+import "asd-components/dist/index.css"
+
 
 library.add(fas)
 

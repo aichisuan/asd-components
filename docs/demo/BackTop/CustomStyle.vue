@@ -9,5 +9,5 @@
 </template>
 
 <script setup>
-import BackTop from '@/components/BackTop/BackTop.vue';
+import { BackTop } from 'asd-components';
 </script>

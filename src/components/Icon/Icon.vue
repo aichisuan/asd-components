@@ -14,6 +14,11 @@ import { omit } from "lodash-es";
 
 import type { FontAwesomeIconProps } from "@fortawesome/vue-fontawesome";
 
+defineOptions({
+  name: 'AIcon',
+  inheritAttrs: false,
+})
+
 interface OIconProps {
   type?: string;
   color?: string;
@@ -23,12 +28,6 @@ export type IconProps = FontAwesomeIconProps & OIconProps;
 
 library.add(fas);
 
-
-
-defineOptions({
-  name: 'as-icon',
-  inheritAttrs: false,
-})
 
 const props = defineProps<IconProps>();
 

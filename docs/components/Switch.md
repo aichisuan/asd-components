@@ -29,7 +29,7 @@ description: Switch 组件的文档
 
 通过 `activeText` 和 `inactiveText` 属性为开关添加文字描述。
 
-<preview path="../demo/Switch/WithText.vue" language="vue"></preview>
+<preview path="../demo/Switch/WithTextFormat.vue" language="vue"></preview>
 
 ## 自定义激活值和未激活值
 

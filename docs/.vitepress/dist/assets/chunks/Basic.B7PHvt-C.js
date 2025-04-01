@@ -1,1 +1,0 @@
-import{F as s}from"./asd-components.es.CAmWihuR.js";import{p as t,o as l,c as r,G as c,k as n}from"./framework.DEWnd-8E.js";import"./theme.CQLTccrV.js";const m={class:"switch-wrap"},f={__name:"Basic",setup(p){const e=t(!1);return(u,a)=>(l(),r("div",m,[c(n(s),{modelValue:e.value,"onUpdate:modelValue":a[0]||(a[0]=o=>e.value=o)},null,8,["modelValue"])]))}};export{f as default};

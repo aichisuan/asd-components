@@ -87,7 +87,7 @@ import type { InputProps, InputEmits } from './types';
 import Icon from '../Icon/Icon.vue';
 
 defineOptions({
-  name: 'AInput',
+  name: 'Input',
   inheritAttrs: false,
 });
 

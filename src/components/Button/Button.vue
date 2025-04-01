@@ -29,7 +29,7 @@ import Icon from '../Icon/Icon.vue';
 import type { ButtonInstance, ButtonProps } from './types';
 
 defineOptions({
-  name: 'AButton',
+  name: 'Button',
 });
 
 const emit = defineEmits(['click']);

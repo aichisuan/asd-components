@@ -32,7 +32,7 @@ import type { AvatarProps } from './types';
 import useSlotsNamesExits from '../../hooks/useSlotsNamesExits';
 
 defineOptions({
-  name: 'AAvatar',
+  name: 'Avatar',
 });
 
 const props = withDefaults(defineProps<AvatarProps>(), {

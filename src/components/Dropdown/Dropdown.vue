@@ -41,7 +41,7 @@ import RenderVNode from '../../common/renderVNode';
 import type { MenuOptionItem } from './types';
 
 defineOptions({
-  name: 'ADropdown',
+  name: 'Dropdown',
 });
 
 

@@ -9,7 +9,7 @@ import { ref, provide, watch } from 'vue';
 import type { NameType, CollapseProps, CollapseEmits } from './types';
 import { collapseInjectionKey } from './types';
 
-defineOptions({name: 'ACollapse'});
+defineOptions({name: 'Collapse'});
 
 const props = defineProps<CollapseProps>();
 const emits = defineEmits<CollapseEmits>();

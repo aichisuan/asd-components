@@ -7,4 +7,5 @@
 
 <script setup>
 import { Avatar } from 'asd-components';
+console.log(Avatar.name)
 </script>

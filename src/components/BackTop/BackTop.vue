@@ -25,7 +25,7 @@ import { getScrollParent, throttleLast } from '../../common/util';
 import Icon from '../Icon/Icon.vue';
 
 defineOptions({
-  name: 'ABackTop',
+  name: 'BackTop',
 });
 
 const props = withDefaults(defineProps<BackTopProps>(), {

@@ -11,7 +11,7 @@ import { useTransition, TransitionPresets } from '@vueuse/core';
 import type { NumberAnimationProps, NumberAnimationEvent, NumberAnimationExports } from './types';
 
 defineOptions({
-  name: 'ANumberAnimation',
+  name: 'NumberAnimation',
 });
 
 const props = withDefaults(defineProps<NumberAnimationProps>(), {

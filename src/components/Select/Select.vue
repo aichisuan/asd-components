@@ -53,7 +53,7 @@ import { findOption } from './methods';
 
 
 defineOptions({
-  name: 'ASelect',
+  name: 'Select',
 });
 
 const props = defineProps<SelectProps>();

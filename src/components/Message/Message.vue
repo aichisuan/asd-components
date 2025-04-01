@@ -7,7 +7,7 @@ import Icon from '../Icon/Icon.vue';
 import RenderVNode from '../../common/renderVNode';
 
 defineOptions({
-  name: 'AMessage',
+  name: 'Message',
 });
 
 const props = withDefaults(defineProps<MessageProps>(), {

@@ -64,7 +64,7 @@ import type { ImgPreviewProps } from './types';
 import { Icon } from 'asd-components';
 
 defineOptions({
-  name: 'AImgPreview',
+  name: 'ImgPreview',
 });
 
 // Props 和 Emits

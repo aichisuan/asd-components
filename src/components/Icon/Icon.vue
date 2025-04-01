@@ -15,7 +15,7 @@ import { omit } from "lodash-es";
 import type { FontAwesomeIconProps } from "@fortawesome/vue-fontawesome";
 
 defineOptions({
-  name: 'AIcon',
+  name: 'Icon',
   inheritAttrs: false,
 })
 

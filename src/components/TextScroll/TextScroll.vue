@@ -111,7 +111,7 @@ import type { TextScrollProps, Item } from './types';
 import { clearAf, requestAf } from '../../common/util';
 
 defineOptions({
-  name: 'ATextScroll',
+  name: 'TextScroll',
 });
 
 const props = withDefaults(defineProps<TextScrollProps>(), {

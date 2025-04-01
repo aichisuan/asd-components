@@ -41,7 +41,7 @@ import type { CollapseItemProps } from './types';
 import Icon from '../Icon/Icon.vue';
 
 defineOptions({
-  name: 'ACollapseItem',
+  name: 'CollapseItem',
 });
 
 const props = defineProps<CollapseItemProps>();

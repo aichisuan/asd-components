@@ -33,7 +33,7 @@ import { ref, computed, onMounted, watch } from 'vue';
 import type { SwitchProps, SwitchEmits } from './types';
 
 defineOptions({
-  name: 'ASwitch',
+  name: 'Switch',
 });
 
 const emits = defineEmits<SwitchEmits>();

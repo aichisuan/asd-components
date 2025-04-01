@@ -1,6 +1,6 @@
 <template>
   <Button @click="showMessage" type="primary" class="mb2">展示消息弹窗</Button>
-  <Button @click="showMessageShowVNode" type="primary">showVNode</Button>
+  <Button @click="showMessageShowVNode" type="primary" class="mb2">showVNode</Button>
 </template>
 
 <script setup>

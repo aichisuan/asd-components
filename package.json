@@ -71,7 +71,7 @@
     "@vue/runtime-dom": "^3.5.13",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
-    "asd-components": "^1.0.1",
+    "asd-components": "^1.0.2",
     "axios": "^1.7.9",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",

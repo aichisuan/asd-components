@@ -21,7 +21,9 @@ description: BackTop 组件的文档
 
 ## 自定义提示
 
-通过 `tooltipText` 属性设置悬浮提示文字。@TODO, 此处样式提示待修改。
+通过 `tooltipText` 属性设置悬浮提示文字。
+
+<!-- @TODO, 此处样式提示待修改。 -->
 
 <preview path="../demo/BackTop/TipText.vue" language="vue"></preview>
 

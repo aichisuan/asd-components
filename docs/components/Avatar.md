@@ -36,8 +36,6 @@ description: Avatar 组件的文档
 
 ## Avatar API
 
->>>> TODO 检查
-
 ### Avatar Attributes
 
 | 属性名          | 描述                       | 类型                                   | 默认值       |

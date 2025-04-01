@@ -1,1 +1,0 @@
-import{a as l}from"./asd-components.es.CBeiFvqK.js";import{d as t,p as n,o as r,b as s,k as p}from"./framework.ut5QMzK5.js";const _=t({__name:"Basic",setup(m){const e=n("");return(u,a)=>(r(),s(p(l),{modelValue:e.value,"onUpdate:modelValue":a[0]||(a[0]=o=>e.value=o),placeholder:"请输入内容",maxlength:"10",style:{width:"200px"}},null,8,["modelValue"]))}});export{_};

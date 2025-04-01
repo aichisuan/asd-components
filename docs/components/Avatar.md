@@ -26,7 +26,7 @@ description: Avatar 组件的文档
 
 通过 `shape` 属性设置头像的形状，支持 `circle` 和 `square`。
 
-<preview path="../demo/Avatar/Shapes.vue" language="vue"></preview>
+<preview path="../demo/Avatar/ShapesFat.vue" language="vue"></preview>
 
 ## 自定义内容
 

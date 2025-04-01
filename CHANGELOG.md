@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.8](https://github.com/aichisuan/asd-components/compare/v1.1.0...v1.0.8) (2025-04-01)
+
+
+### Bug Fixes
+
+* 修复全局引入 ([22be4db](https://github.com/aichisuan/asd-components/commit/22be4db8ee00d1da87426a8727006c673c32d8cf))
+* 修改所有引入方式,以及解决全局引入bug ([b6100b7](https://github.com/aichisuan/asd-components/commit/b6100b751c6e73a9ad19bf3706be8afa36fcf846))
+
 ## 1.0.5 (2025-04-01)
 
 

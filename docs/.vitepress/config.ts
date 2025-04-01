@@ -6,6 +6,7 @@ import { containerPreview, componentPreview } from '@vitepress-demo-preview/plug
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/asd-components/',
   title: 'asd-components',
   description: '一个致力于解决前端pc疑难杂症的按需引入组件库',
   lang: 'zh-CN',

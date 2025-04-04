@@ -7,7 +7,7 @@ hero:
   text: "一个致力于解决前端问题的Vue3 组件库"
   tagline: 简洁至上  vue3 组件库  持续更新中
   image: 
-    src: /asd-components/img/logo.png
+    src: /img/logo.png
     alt: logo
     style: 
   actions:
